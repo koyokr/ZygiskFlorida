@@ -23,11 +23,11 @@ task downloadFlorida(type: Download) {
     def magiskArchs = ["arm", "arm64", "x64", "x86"]
 
     def sources = downloadArchs.collect{
-        arch -> "https://github.com/Ylarod/Florida/releases/download/${floridaVersion}/florida-gadget-${floridaVersion}-android-${arch}.so.xz".toString()
+        arch -> "https://github.com/Ylarod/Florida/releases/download/${floridaVersion}/florida-gadget-${floridaVersion}-android-${arch}.so.gz".toString()
     }
 
     def outputs = magiskArchs.collect{
-        arch ->  "libgadget-${arch}.so.xz".toString()
+        arch ->  "libgadget-${arch}.so.gz".toString()
     }
 
     def downloads = [sources, outputs].transpose().collectEntries()
